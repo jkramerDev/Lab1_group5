@@ -1,6 +1,8 @@
 package linkedList;
  
  
+//hi 
+
 
 public interface LinkedList {
 	public Boolean isItemInList(String thisItem);
