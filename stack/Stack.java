@@ -6,9 +6,13 @@ public interface Stack {
 	public String pop();
 	public Boolean isEmpty();
 	public Boolean isFull();
+	
+	//Returns total number of elements in stack
 	public int size();
 	public String peek();
 	
-	public void setCapacity(int size);
+	//Changed set to get capacity
+	//Returns total possible number of elements in stack
+	public int getCapacity();
 	public void display();
 }
