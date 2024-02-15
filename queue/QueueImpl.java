@@ -63,7 +63,7 @@ public class QueueImpl implements Queue {
 	public void display() {
 		// TODO Auto-generated method stub
 		System.out.println("Elements in the list: ");
-		for(int i = 0; i<=size; i++) {
+		for(int i = 0; i<size; i++) {
 			System.out.println(elements[i]);
 		}
 		
@@ -72,7 +72,7 @@ public class QueueImpl implements Queue {
 	@Override
 	public String peek() {
 		// TODO Auto-generated method stub
-		return elements[rear];
+		return elements[front];
 	}
 
 }

@@ -9,26 +9,24 @@ public class QueueTester {
 		
 		String name = "placeholder";
 		Scanner scanner = new Scanner(System.in);
-		int length = name.length();
+		
 		
 		System.out.print("Enter a rider's name, or leave the name blank to quit: ");
-		while(length == 0) {
-			
-			name = scanner.nextLine();
-			
-			length = name.length();
-			
-			tester.enQueue(name);
-			if(length == 0) {
-				System.out.print("Enter another rider's name, or leave the name blank to quit: ");
-			}
-			else {
-				System.out.println("Quitting..");
-			}
-		}
+		while (true) {
+	        name = scanner.nextLine();
+	        int length = name.length(); // Moved inside the loop to check the length of the new name
+	        
+	        if (length == 0) {
+	            System.out.println("Quitting..");
+	            break;
+	        } else {
+	            tester.enQueue(name);
+	            System.out.print("Enter another rider's name, or leave the name blank to quit: ");
+	        }
+	    }
 		
 		
-		tester.peek();
+		System.out.println("Peeked element: " + tester.peek());
 		tester.display();
 	}
 
