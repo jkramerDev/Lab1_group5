@@ -101,14 +101,15 @@ public class StackImpl implements Stack {
 	{
 		if (!isEmpty())
 		{
-			System.out.println("The Strings in the stack are: ");
+			System.out.println("\nThe names in the stack are: ");
 			for(int i = 0; i<=top;i++)
 			{
 				System.out.println(elements[i]);
 			}
+			System.out.println();
 		}
 		else
-			System.out.println("The stack is empty");
+			System.out.println("\nThe stack is empty\n");
 	}
  
 
