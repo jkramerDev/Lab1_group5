@@ -6,18 +6,41 @@ public class LinkedListTester {
 		// create implementation, then...
 		
 		LinkedList tester = new LinkedListImpl();
-		tester.addItem("an item to add");
-		tester.addItem("an item to add 2");
+		
+		//Add items
+		tester.addItem("one");
+		tester.addItem("two");
+		
+		//List items
 		tester.listItems();
+		
+		//Item count
 		tester.itemCount();
-		//tester.isItemInList("hello");
-		tester.insertBefore("hello", "an item to add 2");
+		
+		//Check if in list
+		tester.isItemInList("one");
+		tester.isItemInList("three");
+		
+		//Insert before
+		tester.insertBefore("hello", "one");
+		
+		//List items
 		tester.listItems();
-		tester.itemCount();
-		tester.deleteItem("hello");
-		//tester.isItemInList("hello");
+		
+		//Insert after
+		tester.insertAfter("four", "one");
+		
+		//List items
 		tester.listItems();
-		tester.itemCount();
+		
+		//Delete item
+		tester.deleteItem("two");
+		
+		//Sort
+		tester.sort();
+		
+		//List items
+		tester.listItems();
 	}
 
 }

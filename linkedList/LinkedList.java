@@ -1,7 +1,7 @@
 package linkedList;
  
  
-//hi 
+
 
 
 public interface LinkedList {

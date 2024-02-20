@@ -8,30 +8,31 @@ public class LinkedListImpl implements LinkedList {
 		ListItem temp = head;
 		while( temp != null) {
 			if(temp.data.equalsIgnoreCase(thisItem)) {
-				System.out.println("The item was in the list");
+				System.out.println("The station " + thisItem + " was in the list");
 				return true;
 			}
+			temp = temp.next;
 		}
+		System.out.println("The station " + thisItem + " was not in the list");
 		return false;
 	}
 
 	@Override
 	public Boolean addItem(String thisItem) {
 		
-		
-		System.out.println("hello from addItem in LinkedListImpl - the item passed in: " + thisItem);
-		
 		if(head == null) {
+			System.out.println(thisItem + " was added to the list");
 			head = new ListItem(thisItem);
 			return true;
 		}
 		ListItem current = head;
 		while(current.next != null) {
+			
 			current = current.next;
-			return true;
 		}
 		current.next = new ListItem(thisItem);
-		return false;
+		System.out.println(thisItem + " was added to the list");
+		return true;
 	}
 
 	@Override
@@ -67,28 +68,38 @@ public class LinkedListImpl implements LinkedList {
 		
 		ListItem current = head;
 		while(current.next != null) {
-			if(current.next.data == thisItem) {
+			if(current.next.data.equals(thisItem)) {
+				System.out.println(thisItem + " was removed from the list");
 				current.next = current.next.next;
 				return true;
 			}else {
 				current = current.next;
-				return false;
 			}
 		}
-		return null;
+		return false;
 	}
 
 	@Override
 	public Boolean insertBefore(String newItem, String itemToInsertBefore) {
 		
+		ListItem itemNew = new ListItem(newItem);
+		
+		if(head != null && head.data.equalsIgnoreCase(itemToInsertBefore)) {
+			System.out.println(newItem + " was added before " + itemToInsertBefore);
+			itemNew.next = head;
+			head = itemNew;
+			return true;
+		}
+		
 		ListItem current = head;
-		while( current != null) {
+		while( current != null && current.next != null) {
 			if(current.next.data.equalsIgnoreCase(itemToInsertBefore)) {
-				ListItem itemNew = new ListItem(newItem);
+				System.out.println(newItem + " was added before " + itemToInsertBefore);
 				itemNew.next = current.next;
 				current.next = itemNew;
 				return true;
 			}
+			current = current.next;
 		}
 		return false;
 		
@@ -100,11 +111,13 @@ public class LinkedListImpl implements LinkedList {
 		ListItem current = head;
 		while( current != null) {
 			if(current.data.equalsIgnoreCase(itemToInsertAfter)) {
+				System.out.println(newItem + " was added after " + itemToInsertAfter);
 				ListItem itemNew = new ListItem(newItem);
 				itemNew.next = current.next;
 				current.next = itemNew;
 				return true;
 			}
+			current = current.next;
 		}
 		return false;
 		
@@ -112,7 +125,20 @@ public class LinkedListImpl implements LinkedList {
 
 	@Override
 	public void sort() {
-		// TODO Auto-generated method stub
+		boolean keepGoing = true;
+		while(keepGoing) {
+			keepGoing = false;
+			ListItem current = head;
+			while(current != null && current.next != null) {
+				if(current.data.compareToIgnoreCase(current.next.data) > 0) {
+					String temporary = current.data;
+					current.data = current.next.data;
+					current.next.data = temporary;
+					keepGoing = true;
+				}
+				current = current.next;
+			}
+		}
 		
 	}
 	
