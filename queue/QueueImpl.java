@@ -37,42 +37,47 @@ public class QueueImpl implements Queue {
 		      rear = (rear + 1) % elements.length;
 		      elements[rear] = element;
 		      size ++;
-		      System.out.println("Added element to queue.");
+		      System.out.println("Added " + element + " to queue.");
 		    }
 		
 	}
 
 	@Override
-	public String deQueue() {
+	public void deQueue() {
 		// TODO Auto-generated method stub
 		if (isEmpty())
-		     System.err.println("Couldn't remove element from empty queue.");
+		     System.err.println("Couldn't remove someone from the empty queue.");
 		else {
-		      String toReturn = elements[front];
+		      String deQueue = elements[front];
 		      elements[front] = null;
 		      front = (front + 1) % elements.length;
 		      size --;
-		      System.out.println("Removed element from queue");
-		      return toReturn;
+		      System.out.println("Removed " + deQueue + " from queue");
+		     
 		    }
-		return null;
 		
 	}
 
 	@Override
 	public void display() {
 		// TODO Auto-generated method stub
-		System.out.println("Elements in the list: ");
+		System.out.println("People in the queue: ");
 		for(int i = 0; i<size; i++) {
-			System.out.println(elements[i]);
+			if (elements[i] == null) {
+				
+			}
+			else {
+				System.out.println(elements[i]);
+			}
+			
 		}
 		
 	}
 
 	@Override
-	public String peek() {
+	public void peek() {
 		// TODO Auto-generated method stub
-		return elements[front];
+		System.out.println("The first person in the queue is " + elements[front]);
 	}
 
 }

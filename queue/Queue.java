@@ -9,12 +9,12 @@ public interface Queue {
 	  void enQueue(String element);
 	  
 	  // delete element from the queue
-	  String deQueue();
+	  void deQueue();
 	  
 	  // display element of the queue
 	  void display();
 	  
 	  //display 'first' element 
-	  public String peek();
+	  public void peek();
 	
 }

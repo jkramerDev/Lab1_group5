@@ -16,13 +16,13 @@ public class StagBusClient {
 		stagBusLinkedList();
 		//listRunTestMethod...
  		
-		System.out.println("-----S T A C K  T E S T------");
-		stagBusStack();
+		System.out.println("----Q U E U E  T E S T-------");
+		stagBusQueue();
 		//QRunTestMethod...
 	 
-		System.out.println("----Q U E U E  T E S T-------");
 		
-
+		System.out.println("-----S T A C K  T E S T------");
+		stagBusStack();
 		//StackRunTestMethod...
 		
 	 	}
@@ -75,6 +75,43 @@ public class StagBusClient {
 		stations.listItems();
 		System.out.println();
 	}
+	
+	public static void stagBusQueue() {
+		QueueImpl queue = new QueueImpl(10);
+
+        //Create (enqueue) 6 riders by name
+		queue.enQueue("Emma");
+		queue.enQueue("Liam");
+		queue.enQueue("Olivia");
+		queue.enQueue("Noah");
+		queue.enQueue("Ava");
+		queue.enQueue("William");
+
+        //Iterate over the queue, print all riders
+        queue.display();
+
+        //Peek at the queue / print the result
+        queue.peek();
+
+        //Remove (dequeue) the head of the queue
+        queue.deQueue();
+
+        //Iterate over the queue, print all riders
+        queue.display();
+
+        //Add two more riders to the queue
+        queue.enQueue("James");
+        queue.enQueue("Omar");
+
+        //Peek at the queue & print the result
+        queue.peek();
+
+        //Remove the head & print the result
+        queue.deQueue();
+
+        //Iterate over the queue, print all riders
+        queue.display();
+    }
 	
 	public static void stagBusStack()
 	{

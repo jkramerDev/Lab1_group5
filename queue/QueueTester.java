@@ -26,7 +26,7 @@ public class QueueTester {
 	    }
 		
 		
-		System.out.println("Peeked element: " + tester.peek());
+		tester.peek();
 		tester.display();
 	}
 
