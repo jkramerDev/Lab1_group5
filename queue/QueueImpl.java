@@ -62,7 +62,7 @@ public class QueueImpl implements Queue {
 	public void display() {
 		// TODO Auto-generated method stub
 		System.out.println("People in the queue: ");
-		for(int i = 0; i<size; i++) {
+		for(int i = 0; i != (rear + 1) % elements.length; i = (i + 1) % elements.length) {
 			if (elements[i] == null) {
 				
 			}
